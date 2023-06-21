@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
   View,
   FlatList,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import instance from './api/api';
@@ -26,8 +27,20 @@ export default function TaskListScreen({ navigation }) {
   };
 
   const handleDelete = async (itemId) => {
+    Alert.alert(
+      'Delete Task',
+      'Are you sure you want to delete this task?',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'Delete', onPress: () => confirmDelete(itemId) },
+      ]
+    );
+  };
+
+  const confirmDelete = async (itemId) => {
     try {
       await instance.delete(`/api/v1/items/${itemId}`);
+      Alert.alert("Deleted", "Item deleted Successfully");
       const updatedMovies = movies.filter((item) => item._id !== itemId);
       setMovies(updatedMovies);
     } catch (error) {
@@ -58,7 +71,7 @@ export default function TaskListScreen({ navigation }) {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          navigation.push('Task');
+          navigation.push('Add Task');
         }}
       >
         <FontAwesome5 name={'plus'} size={23} color="white" />
