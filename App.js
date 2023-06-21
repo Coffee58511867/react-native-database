@@ -7,6 +7,7 @@ import MoviesScreen from "./componets/MoviesScreen";
 import Splashcreen from "./componets/Splash";
 import AddTaskScreen from "./componets/AddTask";
 import TaskListScreen from "./componets/TaskList";
+import AddScreen from "./componets/AddScreen";
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,7 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="My Tasks" component={TaskListScreen} />
         <Stack.Screen name="Add Task" component={AddTaskScreen} />
+        <Stack.Screen name="Task" component={AddScreen} />
         <Stack.Screen
           name="Splash"
           options={{

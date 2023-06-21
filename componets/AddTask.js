@@ -12,13 +12,14 @@ export default function AddTaskScreen({ navigation }) {
   const [name, setName] = useState("");
   const [description , setDescription] = useState("");
 
-  const handleLogin = async () => {
+  const handleSubmit = async () => {
     if (name.length == 0) {
       Alert.alert("Warning", "Please enter your details ");
     } else {
       try {
         var userData = {
           Name: name,
+          Description: description,
         };
       } catch (error) {
         console.log(error);
@@ -41,7 +42,7 @@ export default function AddTaskScreen({ navigation }) {
       />
 
       <TouchableOpacity style={styles.btn}>
-        <Text style={styles.btnTex} onPress={handleLogin}>
+        <Text style={styles.btnTex} onPress={handleSubmit}>
           Submit
         </Text>
       </TouchableOpacity>

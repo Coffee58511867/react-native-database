@@ -29,11 +29,11 @@ export default function MoviesScreen() {
       <FlatList
         data={movies}
         renderItem={({ item }) => (
-            <TouchableOpacity>
-          <View style={styles.list}>
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.subtitle}>{item.releaseYear}</Text>
-          </View>
+          <TouchableOpacity>
+            <View style={styles.list}>
+              <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.subtitle}>{item.releaseYear}</Text>
+            </View>
           </TouchableOpacity>
         )}
       />
@@ -49,25 +49,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  list : {
-    backgroundColor: '#ffffff',
+  list: {
+    backgroundColor: "#ffffff",
     borderWidth: 2,
     padding: 10,
     marginTop: 10,
     height: 100,
-    borderColor: '#cccccc',
+    borderColor: "#cccccc",
     width: 300,
-    borderRadius: 8 ,
-    justifyContent: 'center',
-    alignItems: 'center'
+    borderRadius: 8,
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontSize: 25,
-   
-
   },
   subtitle: {
-   
     fontSize: 15,
-  }
+  },
 });

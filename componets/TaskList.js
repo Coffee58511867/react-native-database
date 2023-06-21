@@ -15,7 +15,7 @@ export default function TaskListScreen({ navigation }) {
 
       <TouchableOpacity style={styles.button}
        onPress={() => {
-        navigation.push('Add Task');
+        navigation.push('Task');
        }}
        >
         <FontAwesome5 
