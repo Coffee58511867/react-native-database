@@ -9,7 +9,7 @@ export default function HomeScreen({navigation}) {
           style={styles.btnTex}
           onPress={() => navigation.push("Login")}
         >
-          Bottom Tabs
+         Login Now
         </Text>
       </TouchableOpacity>
       
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   btn: {
     height: 40,
     marginTop: 10,
-    backgroundColor: "darkblue",
+    backgroundColor: "blue",
     width: 250,
     borderRadius: 6,
   },
