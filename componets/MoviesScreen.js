@@ -28,9 +28,9 @@ export default function MoviesScreen() {
       <FlatList
         data={movies}
         renderItem={({ item }) => (
-          <View>
-            <Text>{item.title}</Text>
-            <Text>{item.releaseYear}</Text>
+          <View style={styles.list}>
+            <Text style={styles.title}>{item.title}</Text>
+            <Text style={styles.subtitle}>{item.releaseYear}</Text>
           </View>
         )}
       />
@@ -45,4 +45,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
+  list : {
+    backgroundColor: '#ffffff',
+    borderWidth: 2,
+    padding: 10,
+    marginTop: 10,
+    height: 100,
+    borderColor: '#cccccc',
+    width: 300,
+    borderRadius: 8 ,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  title: {
+    fontSize: 25,
+   
+
+  },
+  subtitle: {
+   
+    fontSize: 15,
+  }
 });
