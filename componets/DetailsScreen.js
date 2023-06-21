@@ -5,7 +5,6 @@ import {
   TextInput,
   View,
   TouchableOpacity,
-  Image,
   Alert,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -41,6 +40,7 @@ export default function DetailsScreen() {
       }
     }
   };
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Welcome {name}</Text>
