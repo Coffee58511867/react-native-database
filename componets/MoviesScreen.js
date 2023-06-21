@@ -4,6 +4,7 @@ import {
   Text,
   View,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 
 export default function MoviesScreen() {

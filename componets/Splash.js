@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
-  TextInput,
   View,
   Image,
 } from "react-native";
 
-export default function Splashcreen() {
+export default function Splashcreen({navigation}) {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.push('My Tasks');
+    }, 2000);
+  }, []);
 
   return (
     <View style={styles.container}>

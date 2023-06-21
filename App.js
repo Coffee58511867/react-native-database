@@ -5,6 +5,7 @@ import LoginScreen from "./componets/LoginScreen";
 import DetailsScreen from "./componets/DetailsScreen";
 import MoviesScreen from "./componets/MoviesScreen";
 import Splashcreen from "./componets/Splash";
+import AddTaskScreen from "./componets/AddTask";
 
 const Stack = createStackNavigator();
 
@@ -15,7 +16,7 @@ export default function App() {
         initialRouteName="Home"
         screenOptions={{
           headerStyle: {
-            backgroundColor: "blue",
+            backgroundColor: "#0080ff",
           },
           headerTintColor: "#fff",
           headerTitleStyle: {
@@ -27,7 +28,14 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Splash" component={Splashcreen} />
+        <Stack.Screen name="My Tasks" component={AddTaskScreen} />
+        <Stack.Screen
+          name="Splash"
+          options={{
+            headerShown: false,
+          }}
+          component={Splashcreen}
+        />
         <Stack.Screen name="Movies" component={MoviesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
