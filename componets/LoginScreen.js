@@ -8,15 +8,21 @@ import {
   Image,
   Alert,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
   const [name, setName] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin =  async() => {
     if (name.length == 0 ){
         Alert.alert('Warning' , 'Please enter your details ');
     }else{
-
+      try {
+        await AsyncStorage.setItem('Name' , name);
+        navigation.push('Details');
+      } catch (error) {
+         console.log(error);
+      }
     }
   }
   return (
@@ -31,7 +37,7 @@ export default function LoginScreen() {
 
       <TouchableOpacity style={styles.btn}>
         <Text style={styles.btnTex} onPress={handleLogin}>
-          Login Now
+          Submit
         </Text>
       </TouchableOpacity>
     </View>

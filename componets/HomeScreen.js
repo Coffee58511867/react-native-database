@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
       <TouchableOpacity style={styles.btn}>
         <Text
           style={styles.btnTex}
