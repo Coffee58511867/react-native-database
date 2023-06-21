@@ -1,18 +1,41 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import {
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  TouchableOpacity,
-  Alert,
-} from "react-native";
+    StyleSheet,
+    Text,
+    View,
+    FlatList,
+    TouchableOpacity,
+  } from "react-native";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 export default function TaskListScreen({ navigation }) {
+    const [movies, setMovies] = useState([]);
 
+    useEffect(() => {
+      getMoviesFromApiAsync();
+    }, []);
+  
+    const getMoviesFromApiAsync = async () => {
+      try {
+        const response = await instance.get("/api/v1/items");
+        const data = await response.json();
+        setMovies(data.movies);
+      } catch (error) {
+        console.error(error);
+      }
+    };
   return (
     <View style={styles.container}>
-
+            <FlatList
+        data={movies}
+        renderItem={({ item }) => (
+          <TouchableOpacity>
+            <View style={styles.list}>
+              <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.subtitle}>{item.description}</Text>
+            </View>
+          </TouchableOpacity>
+        )}
+      />
       <TouchableOpacity style={styles.button}
        onPress={() => {
         navigation.push('Task');
@@ -52,5 +75,23 @@ const styles = StyleSheet.create({
      bottom: 10,
      right: 10,
      elevation: 5,
-  }
+  },
+  list: {
+    backgroundColor: "#ffffff",
+    borderWidth: 2,
+    padding: 10,
+    marginTop: 10,
+    height: 100,
+    borderColor: "#cccccc",
+    width: 300,
+    borderRadius: 8,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 25,
+  },
+  subtitle: {
+    fontSize: 15,
+  },
 });
