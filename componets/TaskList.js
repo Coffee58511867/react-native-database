@@ -7,6 +7,9 @@ import {
     TouchableOpacity,
   } from "react-native";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import instance from "./api/api";
+
+
 export default function TaskListScreen({ navigation }) {
     const [movies, setMovies] = useState([]);
 
@@ -17,8 +20,7 @@ export default function TaskListScreen({ navigation }) {
     const getMoviesFromApiAsync = async () => {
       try {
         const response = await instance.get("/api/v1/items");
-        const data = await response.json();
-        setMovies(data.movies);
+        setMovies(response.data);
       } catch (error) {
         console.error(error);
       }
