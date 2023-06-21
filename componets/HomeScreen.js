@@ -11,6 +11,14 @@ export default function HomeScreen({navigation}) {
          Login Now
         </Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.btn}>
+        <Text
+          style={styles.btnTex}
+          onPress={() => navigation.push("Movies")}
+        >
+         Movie List
+        </Text>
+      </TouchableOpacity>
       
     </View>
   );
