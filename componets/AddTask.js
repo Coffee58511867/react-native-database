@@ -54,11 +54,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: 'center',
+
   },
   btn: {
     height: 40,
-    marginTop: 10,
+    marginTop: 20,
     backgroundColor: "#0080ff",
     width: 250,
     borderRadius: 6,
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     textAlign: "center",
     fontSize: 20,
+    marginTop: 10,
     height: 45,
     margin: 5,
   },
