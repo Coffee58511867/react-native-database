@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 export default function AddTaskScreen({ navigation }) {
   const [name, setName] = useState("");
   const [description , setDescription] = useState("");
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   btn: {
     height: 40,
     marginTop: 10,
-    backgroundColor: "blue",
+    backgroundColor: "#0080ff",
     width: 250,
     borderRadius: 6,
   },

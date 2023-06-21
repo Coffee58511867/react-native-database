@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   btn: {
     height: 40,
     marginTop: 10,
-    backgroundColor: "blue",
+    backgroundColor: "#0080ff",
     width: 250,
     borderRadius: 6,
   },
