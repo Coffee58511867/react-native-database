@@ -5,12 +5,12 @@ import {
   TextInput,
   View,
   TouchableOpacity,
-  Image,
   Alert,
 } from "react-native";
 
-export default function AddTaskcreen({ navigation }) {
+export default function AddTaskScreen({ navigation }) {
   const [name, setName] = useState("");
+  const [description , setDescription] = useState("");
 
   const handleLogin = async () => {
     if (name.length == 0) {
@@ -18,8 +18,8 @@ export default function AddTaskcreen({ navigation }) {
     } else {
       try {
         var userData = {
-            Name: name,
-        }
+          Name: name,
+        };
       } catch (error) {
         console.log(error);
       }
@@ -28,10 +28,16 @@ export default function AddTaskcreen({ navigation }) {
   return (
     <View style={styles.container}>
       <TextInput
-        placeholder="Enter your task name"
+        placeholder="Enter task title"
         style={styles.input}
         value={name}
         onChangeText={(value) => setName(value)}
+      />
+      <TextInput
+        placeholder="Enter task description"
+        style={styles.input}
+        value={description}
+        onChangeText={(value) => setDescription(value)}
       />
 
       <TouchableOpacity style={styles.btn}>
@@ -48,6 +54,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
+    justifyContent: 'center',
   },
   btn: {
     height: 40,
@@ -71,6 +78,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     height: 45,
     margin: 5,
-    
   },
 });
