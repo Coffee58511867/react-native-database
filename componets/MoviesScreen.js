@@ -28,10 +28,12 @@ export default function MoviesScreen() {
       <FlatList
         data={movies}
         renderItem={({ item }) => (
+            <TouchableOpacity>
           <View style={styles.list}>
             <Text style={styles.title}>{item.title}</Text>
             <Text style={styles.subtitle}>{item.releaseYear}</Text>
           </View>
+          </TouchableOpacity>
         )}
       />
     </View>
