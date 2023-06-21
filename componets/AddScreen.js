@@ -6,8 +6,8 @@ import {
   TextInput,
   View,
   TouchableOpacity,
+  Alert,
 } from "react-native";
-import axios from 'axios'
 import instance from './api/api';
 
 export default function AddScreen({ navigation }) {
@@ -17,9 +17,16 @@ export default function AddScreen({ navigation }) {
     console.log(data);
     try {
         const response = await instance.post("/api/v1/items/addItem", data);
-        console.log(response.data); // Response from the backend
-        // Add navigation or other logic after successful submission
-        navigation.push('My Tasks')
+        console.log(response.data); 
+        if (response) {
+            Alert.alert("Success" , "Item has been added Successfully");
+            navigation.push('My Tasks')
+          }
+          if(!response){
+            Alert.alert("Error" , "Item could not be added");
+          }
+
+        
       } catch (error) {
         console.error(error);
         console.log(error);
@@ -30,7 +37,7 @@ export default function AddScreen({ navigation }) {
     <View style={styles.container}>
       <Controller
         control={control}
-        name="name"
+        name="title"
         rules={{ required: "Please enter task title" }}
         defaultValue=""
         render={({ field: { onChange, value } }) => (
@@ -41,8 +48,8 @@ export default function AddScreen({ navigation }) {
               onChangeText={onChange}
               value={value}
             />
-            {errors.name && (
-              <Text style={styles.errorText}>{errors.name.message}</Text>
+            {errors.title && (
+              <Text style={styles.errorText}>{errors.title.message}</Text>
             )}
           </View>
         )}
