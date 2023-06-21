@@ -10,29 +10,40 @@ import {
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function LoginScreen({navigation}) {
+export default function LoginScreen({ navigation }) {
   const [name, setName] = useState("");
+  const [age, setAge] = useState("");
 
-  const handleLogin =  async() => {
-    if (name.length == 0 ){
-        Alert.alert('Warning' , 'Please enter your details ');
-    }else{
+  const handleLogin = async () => {
+    if (name.length == 0 && age.length != 0) {
+      Alert.alert("Warning", "Please enter your details ");
+    } else {
       try {
-        await AsyncStorage.setItem('Name' , name);
-        navigation.push('Details');
+        var userData = {
+            Name: name,
+            Age : age,
+        }
+        await AsyncStorage.setItem("UserInfo", JSON.stringify(userData));
+        navigation.push("Details");
       } catch (error) {
-         console.log(error);
+        console.log(error);
       }
     }
-  }
+  };
   return (
     <View style={styles.container}>
-        <Image style={styles.image}  source={require('../assets/favicon.png')}/>
+      <Image style={styles.image} source={require("../assets/favicon.png")} />
       <TextInput
         placeholder="Enter your name"
         style={styles.input}
         value={name}
         onChangeText={(value) => setName(value)}
+      />
+      <TextInput
+        placeholder="Enter your age"
+        style={styles.input}
+        value={age}
+        onChangeText={(value) => setAge(value)}
       />
 
       <TouchableOpacity style={styles.btn}>
@@ -64,9 +75,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   image: {
-      height: 100,
-      width: 100,
-      marginTop: 50,
+    height: 100,
+    width: 100,
+    marginTop: 50,
+    marginBottom: 200,
   },
 
   input: {
@@ -76,7 +88,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     height: 45,
-    margin: 20,
-    marginTop: 200,
+    margin: 5,
+    
   },
 });
