@@ -1,9 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 export default function LoginScreen() {
+
+    const [name, setName] = useState('');
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Welcome Back</Text>
+      <TextInput
+       placeholder='Enter your name'
+       value={name}
+       onChangeText={value => setName(value)}
+
+      />
     </View>
   );
 }
