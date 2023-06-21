@@ -19,6 +19,14 @@ export default function HomeScreen({navigation}) {
          Movie List
         </Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.btn}>
+        <Text
+          style={styles.btnTex}
+          onPress={() => navigation.push("Splash")}
+        >
+         Splash Screen
+        </Text>
+      </TouchableOpacity>
       
     </View>
   );

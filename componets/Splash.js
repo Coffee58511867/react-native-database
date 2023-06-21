@@ -20,7 +20,7 @@ export default function Splashcreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "blue",
+    backgroundColor: "#0080ff",
     justifyContent: 'center',
 
     alignItems: "center",
@@ -30,10 +30,9 @@ const styles = StyleSheet.create({
      fontSize: 25,
   },
   image: {
-    height: 100,
-    width: 100,
-    marginTop: 50,
-    marginBottom: 200,
+    height: 150,
+    width: 150,
+    margin: 20,
   },
 
 
