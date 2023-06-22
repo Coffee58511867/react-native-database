@@ -6,6 +6,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
+import Card from "../shared/card";
 
 export default function MoviesScreen() {
   const [movies, setMovies] = useState([]);
@@ -29,12 +30,14 @@ export default function MoviesScreen() {
       <FlatList
         data={movies}
         renderItem={({ item }) => (
+          <Card>
           <TouchableOpacity>
-            <View style={styles.list}>
+            <View >
               <Text style={styles.title}>{item.title}</Text>
               <Text style={styles.subtitle}>{item.releaseYear}</Text>
             </View>
           </TouchableOpacity>
+          </Card>
         )}
       />
     </View>
