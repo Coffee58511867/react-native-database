@@ -1,27 +1,28 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import {Text, View, TouchableOpacity } from 'react-native';
+import { globalStyles } from '../styles/global';
 
 export default function HomeScreen({navigation}) {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.btn}>
+    <View style={globalStyles.container}>
+      <TouchableOpacity style={globalStyles.btn}>
         <Text
-          style={styles.btnTex}
+          style={globalStyles.btnTex}
           onPress={() => navigation.push("Login")}
         >
          Login Now
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity style={globalStyles.btn}>
         <Text
-          style={styles.btnTex}
+          style={globalStyles.btnTex}
           onPress={() => navigation.push("Movies")}
         >
          Movie List
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity style={globalStyles.btn}>
         <Text
-          style={styles.btnTex}
+          style={globalStyles.btnTex}
           onPress={() => navigation.push("Splash")}
         >
          Splash Screen
@@ -31,25 +32,3 @@ export default function HomeScreen({navigation}) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  btn: {
-    height: 40,
-    marginTop: 10,
-    backgroundColor: "#0080ff",
-    width: 250,
-    borderRadius: 6,
-  },
-  btnTex: {
-    color: "white",
-    textAlign: "center",
-    marginTop: 9,
-    fontSize: 16,
-  },
-});

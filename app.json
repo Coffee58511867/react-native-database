@@ -18,11 +18,11 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "relatedtoanysample.sampleapp",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.marobacoffee.mashdatabases"
     },
     "web": {
       "favicon": "./assets/favicon.png"
