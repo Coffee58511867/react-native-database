@@ -1,7 +1,13 @@
 import {Text, View, TouchableOpacity } from 'react-native';
 import { globalStyles } from '../styles/global';
+import CustomButton from './button';
 
 export default function HomeScreen({navigation}) {
+
+  const hadleNavigation = () => {
+    navigation.push("Movies");
+  }
+  
   return (
     <View style={globalStyles.container}>
       <TouchableOpacity style={globalStyles.btn}>
@@ -28,6 +34,7 @@ export default function HomeScreen({navigation}) {
          Splash Screen
         </Text>
       </TouchableOpacity>
+      <CustomButton text="Custom Button" onPress={hadleNavigation}/>
       
     </View>
   );

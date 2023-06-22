@@ -1,11 +1,13 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
-import styles from "../styles/global";
+import { TouchableOpacity, Text, View } from "react-native";
+import { globalStyles } from "../styles/global";
 
-export default function customButton({ text }) {
+export default function CustomButton({ text, onPress }) {
   return (
-    <TouchableOpacity style={styles.btn}>
-      <Text style={styles.btnTex}>{text}</Text>
+    <TouchableOpacity>
+      <View style={globalStyles.btn}>
+        <Text style={globalStyles.btnTex}  onPress={onPress}>{text}</Text>
+      </View>
     </TouchableOpacity>
   );
 }
