@@ -1,6 +1,6 @@
 import {Text, View, TouchableOpacity } from 'react-native';
 import { globalStyles } from '../styles/global';
-import CustomButton from './button';
+import CustomButton from '../shared/button';
 
 export default function HomeScreen({navigation}) {
 
