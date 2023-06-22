@@ -5,7 +5,7 @@ import CustomButton from '../shared/button';
 export default function HomeScreen({navigation}) {
 
   const hadleNavigation = () => {
-    navigation.push("Movies");
+    navigation.push("Students");
   }
   
   return (
