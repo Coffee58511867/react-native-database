@@ -18,14 +18,23 @@ export default function StudentScreen({ navigation }) {
 
   return (
     <View style={globalStyles.container}>
-      <FlatList
+      {/* <FlatList
         data={students}
         renderItem={({ items }) => (
           <Card>
             <Text>{items.name}</Text>
           </Card>
         )}
-      />
+      /> */}
+      <Card>
+        <Text>Good Morning</Text>
+      </Card>
+      <Card>
+        <Text>Good Morning</Text>
+      </Card>
+      <Card>
+        <Text>Good Morning</Text>
+      </Card>
 
       <CustomButton text="Custom Button" onPress={hadleNavigation} />
     </View>
